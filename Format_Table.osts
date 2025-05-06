@@ -1,0 +1,35 @@
+//Aplica formato a una tabla y ajusta algunas colunas en la hoja actual
+
+function main(workbook: ExcelScript.Workbook) {
+	let selectedSheet = workbook.getActiveWorksheet();
+	// Add a new table at range A1:L3 on selectedSheet
+	let newTable = workbook.addTable(selectedSheet.getRange("A1:L3"), true);
+	// Set format for range A2:A3 on selectedSheet
+	selectedSheet.getRange("A2:A3").setNumberFormatLocal("m/d/yyyy");
+	// Delete range L:L on selectedSheet
+	selectedSheet.getRange("L:L").delete(ExcelScript.DeleteShiftDirection.left);
+	// Auto fit the columns of range K:K on selectedSheet
+	selectedSheet.getRange("K:K").getFormat().autofitColumns();
+	// Auto fit the columns of range I:I on selectedSheet
+	selectedSheet.getRange("I:I").getFormat().autofitColumns();
+	// Auto fit the columns of range H:H on selectedSheet
+	selectedSheet.getRange("H:H").getFormat().autofitColumns();
+	// Auto fit the columns of range F:F on selectedSheet
+	selectedSheet.getRange("F:F").getFormat().autofitColumns();
+	// Auto fit the columns of range E:E on selectedSheet
+	selectedSheet.getRange("E:E").getFormat().autofitColumns();
+	// Auto fit the columns of range C:C on selectedSheet
+	selectedSheet.getRange("C:C").getFormat().autofitColumns();
+	// Auto fit the columns of range B:B on selectedSheet
+	selectedSheet.getRange("B:B").getFormat().autofitColumns();
+	// Set horizontal alignment to ExcelScript.HorizontalAlignment.center for range A:A on selectedSheet
+	selectedSheet.getRange("A:A").getFormat().setHorizontalAlignment(ExcelScript.HorizontalAlignment.center);
+	selectedSheet.getRange("A:A").getFormat().setIndentLevel(0);
+	// Indent set to 0 for range A:A on selectedSheet
+	selectedSheet.getRange("A:A").getFormat().setIndentLevel(0);
+	// Set horizontal alignment to ExcelScript.HorizontalAlignment.center for range E:E on selectedSheet
+	selectedSheet.getRange("E:E").getFormat().setHorizontalAlignment(ExcelScript.HorizontalAlignment.center);
+	selectedSheet.getRange("E:E").getFormat().setIndentLevel(0);
+	// Indent set to 0 for range E:E on selectedSheet
+	selectedSheet.getRange("E:E").getFormat().setIndentLevel(0);
+}
